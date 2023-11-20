@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/projets+dipl.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <header>
+        <div class="hautDuHaut">
+            <img src="img/mp.png" alt="Mon logo"> 
+            <nav>
+                <a href="../main.html">Page d'introduction</a>
+                <a href="index.html">Mon CV</a>
+            </nav>
+        </div>
+        <div data-aos="fade fade-up-right">
+            <h3>Projets Personnels</h3>
+        </div>
+    </header>
+    <main>
+        <section class="section1" data-aos-offset= "50">
+            <h3>Le snake</h3>
+            <div class="displayCode" data-aos="fade fade-up-right" data-aos-offset= "50">
+                <div class="img" data-aos="fade flip-down" data-aos-offset= "0">
+                    <img src="img/snakePicture.png" alt="">  
+                </div>
+                <div>
+                    <textarea class="code">
+
+                    </textarea>
+                </div>
+            </div>
+                <br><br><br><br><br><br><br><br>
+            <h3>Le morpion</h3>
+            <div class="displayCode" data-aos="fade fade-up-right" data-aos-offset= "50">
+                <div class="img" data-aos="fade flip-down" data-aos-offset= "0">
+                    <img src="img/morpion.png" alt="">  
+                </div>
+                <div data-aos="flip-up">
+                    <textarea class="code"> 
+                        <code>import random
+
+                        i = 0
+                        cases = []
+                        for i in range(9) : 
+                            i += 1
+                            cases.append(i)
+                        
+                        joueurX = []
+                        joueurO = []
+                        
+                        
+                        
+                        def print_morpion_MAJ () :
+                        
+                            print("\n" , cases[6] , "|" , cases[7] , "|" , cases[8] , "\n-----------\n" ,
+                                       cases[3] , "|" , cases[4] , "|" , cases[5] , "\n-----------\n" ,
+                                         cases[0] , "|" ,cases[1] , "|" , cases[2] , "\n")
+                        
+                        
+                        
+                        def search_tree_element_in_line (casesPlayed) :
+                            if len(casesPlayed) >= 3 :
+                                casesPlayed.sort()
+                                p = 0
+                                n = 0
+                                while n <= 6 :
+                                    if casesPlayed[p] == 1 + n and casesPlayed[p+1] == 2 + n and casesPlayed[p+2] == 3 + n:
+                                        print(" C'est win !!!")
+                                        n = 7
+                                    else :
+                                        if len(casesPlayed) == 3:
+                                            n += 3 
+                                        else :
+                                            while p + 3 < len(casesPlayed) :
+                                                p +=1
+                                                if casesPlayed[p] == 1 + n and casesPlayed[p+1] == 2 + n and casesPlayed[p+2] == 3 + n:
+                                                    print(" C'est win !!!")
+                                                    n = 7
+                                    n +=3
+                            return(True)
+                        
+                        
+                        
+                        def search_tree_element_in_column (casesPlayed) :
+                            n = 0
+                            while n <= 2 :
+                                p = 0
+                                for i in casesPlayed :
+                                    if i == ( 1 + n ) :
+                                        p += 1
+                                    elif i == (4 + n ) :
+                                        p += 1
+                                    elif i == (7 + n ) :
+                                        p += 1
+                                if p == 3 :
+                                    print("c'est win")
+                                    print("===GAME OVER===")
+                        
+                                n += 1   
+                            return(True)  
+                        
+                        
+                        
+                        def search_tree_element_in_diagonal (casesPlayed) :
+                            n = 0
+                            while n <= 2 :
+                                p = 0
+                                for i in casesPlayed :
+                                    if i == ( 1 + n ) :
+                                        p += 1
+                                    elif i == ( 5 ) :
+                                        p += 1
+                                    elif i == ( 9 - n ) :
+                                        p += 1
+                                if p == 3 :
+                                    print("c'est win")
+                                    print("===GAME OVER===")
+                                                      # rechercher comment couper une boucle while au millieu de la boucle
+                                n += 2 
+                                              
+                        
+                        
+                        def ia_morpion () :
+                            if cases[4] == 5 :
+                                cases[4] = "X"
+                        
+                            elif cases[0] == 1 and cases[2] == 3 and cases[6] == 7 and cases[8] == 9 :
+                                cases[random.choice(random.choice(1),random.choice(7,9))] = "X"
+                        
+                            elif cases[0] == "X" and cases[3] != "O":
+                                cases[6] = "X"
+                            elif cases[0] == "X" and cases[1] != "O":
+                                cases[2] = "X"
+                            elif cases[0] == "X" and cases[6] == 7 and cases[2] == "X":
+                                cases[6] = "X"
+                            elif cases[1] == 2 and cases[0] == "X" and cases[3] == "X":
+                                cases[1] = "X" 
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        i = 0
+                        while i < 9 :
+                        
+                            print_morpion_MAJ()
+                        
+                            leX = ia_morpion()
+                            joueurX.append(leX)
+                            i += 1
+                        
+                            j = 0
+                            while j < len(joueurX) :
+                                x = 0
+                                while x < len(cases) :
+                                    if joueurX[j] == cases[x] :
+                                        cases[x] = "X"
+                                    else :
+                                        x += 1  
+                                j += 1
+                        
+                            print_morpion_MAJ()
+                            search_tree_element_in_line( joueurX )
+                            search_tree_element_in_column( joueurX )
+                            search_tree_element_in_diagonal( joueurX)
+                        
+                            if i >=9 :
+                                break
+                           
+                        
+                            leO = int(input("Le O "))
+                            joueurO.append(leO)
+                            i += 1
+                        
+                            j = 0
+                            while j < len(joueurO) :
+                                x = 0
+                                while x < len(cases) :
+                                    if joueurO[j] == cases[x] :
+                                        cases[x] = "O"
+                                    else :
+                                        x += 1 
+                                j += 1
+                        
+                            print_morpion_MAJ()
+                            search_tree_element_in_line( joueurO )
+                            search_tree_element_in_column( joueurO )
+                            search_tree_element_in_diagonal( joueurO )
+                        </code>
+                    </textarea>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <h3>Le pendu</h3>
+            <div class="displayCode" data-aos="fade fade-up-right" data-aos-offset= "50">
+                
+                <div class="img" data-aos="flip-up" data-aos-offset= "50">
+                    <img src="img/pendu.png" alt="">
+                </div>
+                
+                <div data-aos="fade flip-up" data-aos-offset= "50">
+                    <textarea class="code">import os
+                        import random
+                        import pickle
+                        import re
+                        from tkinter import *
+                        from PIL import ImageTk , Image
+                        
+                        root = Tk()
+                        root.title("pendu game")
+                        root.geometry("1500x3000")
+                        bg = PhotoImage(file = "/home/parisi/Desktop/intro_sem/WeekPrePool/week02PrePool/pendu/farwest.jpg")
+                        window = Label(root , image = bg)
+                        
+                        root.mainloop()
+                        
+                        array = []
+                        with open("/home/parisi/Desktop/intro_sem/WeekPrePool/week02PrePool/pendu/list.txt" , "r") as f:
+                            words = f.read()   
+                        array = words.split()
+                        hiddenWord = random.choice(array)
+                        
+                        futurWord = []
+                        arrayWord = []
+                        
+                        for i in hiddenWord :
+                            arrayWord.append(i)  
+                            futurWord.append("_")
+                            
+                        wrongLetters = []                             
+                        
+                        mistake = 0
+                        
+                        
+                        
+                        while hiddenWord != "".join(futurWord) :
+                        
+                            print("\n\n\n\n===" , " ".join(futurWord) , "===" , " ".join(wrongLetters))
+                        
+                            letter = str(input("entrer une lettre "))
+                            while len(letter) != 1 :
+                                letter = str(input("QUE UNE LETTRE T'AS APPRIS OU A JOUER!!!"))
+                            wrongLetters.append(letter) 
+                            p = 0
+                            while p < len(arrayWord) :
+                                if letter == arrayWord[p] :
+                                    futurWord[p] = arrayWord[p]
+                                p += 1
+                            q = 0
+                            m = 0
+                            while q < len(arrayWord) :
+                                if letter != arrayWord[q] :
+                                    m += 1
+                                q += 1
+                            if q == m :
+                                mistake += 1
+                            print("\n" , mistake )
+                        
+                        
+                        if hiddenWord == "".join(futurWord) :
+                            print("=====C'EST GAGNE=====\n=====================")
+                        
+                            with open("/home/parisi/Desktop/intro_sem/WeekPrePool/week02PrePool/pendu/hightscore.txt" , "rb") as f1 :
+                                hc1 = pickle.load(f1)
+                                type(hc1)
+                                print(hc1 , "hc1")
+                        
+                            if mistake < hc1 :
+                                with open("/home/parisi/Desktop/intro_sem/WeekPrePool/week02PrePool/pendu/hightscore.txt" , "wb") as f1 :
+                                    pickle.dump(mistake , f1)
+                                with open("/home/parisi/Desktop/intro_sem/WeekPrePool/week02PrePool/pendu/hightscore.txt" , "rb") as f1 :
+                                    hc = pickle.load(f1)
+                                    type(hc)
+                                    print("DDDDAAAAINNN , you break the hightscord your score is " , hc) 
+                            else :
+                                print("GOOOOOD , your score is " , mistake , "The hiscord is " , hc1)
+                        
+                        
+                        
+                        
+                            
+                        
+                            #print( hiddenWord , "".join(futurWord) , "and" , pendu , "".join(displayPendu))      
+                    </textarea>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <h3>Pierre Feuille Ciseaux</h3>
+            <div class="displayCode" data-aos="fade fade-up-left">
+                <div class="img" data-aos="flip-up">
+                    <img src="img/404.png" alt="">
+                </div>
+                
+                <div data-aos="flip-up">
+                    <textarea class="code">import random
+
+                        #var = str(input("P/F/C"))
+                        var1 = "P"
+                        
+                        ordi1 = random.choice([ "P" , "F" , "C" ])
+                        print(ordi1)
+                        
+                        def mesure_du_materiaux(n) :
+                            if n == "F":
+                                n = int(1)
+                            elif n == "C":
+                                n = int(2)
+                            elif n == "P":
+                                n = int(3)
+                                print(n)
+                            else: n = 1000
+                            return (n)
+                        
+                        var = mesure_du_materiaux(var1)
+                        print(var)
+                        ordi = mesure_du_materiaux(ordi1)
+                        print(var , ordi)
+                        
+                        if var > ordi and var == (ordi + 1) :     # Soit 2 et 1  ou 3 et 2 
+                            print("tu as gagné")
+                        elif var > ordi and var > (ordi + 1) :    # Soit 3 et 1
+                            print("tu as perdu")
+                        elif var < ordi and ordi > (var + 1) :    # Soit 3 et 1
+                            print("tu as gagné")
+                        elif var < ordi and ordi == (var + 1) :     # Soit 2 et 1  ou 3 et 2 
+                            print("tu as perdu")
+                        elif var == ordi :
+                            print("égualité")
+                        else : 
+                            print(var , ordi)
+                        </textarea>
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <br>
+            <div class="grid1" data-aos="fade fade-up-left">
+                <h3 class="white"><blockquote>Coordonnées</blockquote></h3>
+                <ul>
+                    <div data-aos="fade-up-right">
+                        <li class="li2"><p>maxime.parisi@epitech.eu</p></li>
+                        <li class="li2">06.52.31.73.20</li>
+                        <li class="li2">14 Avenue Pierre Loti 06000 Nice</li>
+                    </div>
+                </ul>
+            </div>
+            <div data-aos="fade-up-left">
+            <h3 class="white , competence"><blockquote>Compétences</blockquote></h3>
+            </div>
+            <div class="grid2" data-aos="fade-up-right">
+                
+                <ul>
+                    <div data-aos="fade-up-right">
+                    <li class="li2">Programmation : HTML, CSS,
+                        JAVASCRIPT, JAVA.</li>
+                    <li class="li2">Logiciels comptables :
+                            QuadraOndemand ,NeoExpert,
+                            QuadraBox,</li>
+                    </div>
+                    <div data-aos="fade-up-right">
+                    <li class="li2">Comptabilité : enregistrement de
+                            factures, Révision, établissement
+                            Bilan/Compte de résultat.</li>
+                    <li class="li2"> Fiscalité : Déclaration TVA
+                            (CA3/CA12),</li>
+                    <li class="li2">Gestion : Calcul des coûts</li>
+                    </div>
+                </ul>
+            </div>
+            <div class="grid3" data-aos="fade-up-left">
+                <h4 class="white"><blockquote>Langues </blockquote></h4>
+                <ul>
+                    <li class="li2">Francais (langue maternelle)</li>
+                    <li class="li2">Anglais (niveau B2)</li>
+                    <li class="li2">Espagnol (niveau B1)</li>
+                </ul>
+            </div>
+            <div class="grid4" data-aos="fade-up-right">
+                <h4 class="white"><blockquote> Hobbys</blockquote></h4>
+                <ul>
+                    <li class="li2">Sport : Fhun Boxe , Street Work Out</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAD8rNnMBh1eq1tWZd9_7GEbOmac5bqMKNVc&keywords=maxime%20parisi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=6342bdc8-1f8e-4fc2-884a-bc4201385f13&sid=KiZ">Mon profil Linkedin</a>
+        <a href="index.html">Retour au CV </a>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

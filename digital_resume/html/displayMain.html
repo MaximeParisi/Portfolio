@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxime Parisi Portfolio</title>
+    <link rel="stylesheet" href="../css/displayMain.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <object type="audio/mpeg" width="1" height="1" data="img/cri3.m4a">
+        <param name="filename" value="cri2.mp3" />
+        <param name="autostart" value="true" />
+    </object>
+    <section class="wall">
+        <header>
+            <img src="img/mp.png" alt="Mon logo"> 
+            <nav>
+                <a href="index.html">Mon CV</a>
+                <a href="projets.html">Projets</a>
+            </nav>
+        </header>
+        <section>
+            <p class="bonjour">Bonjour, je m'appelle</p>
+            <h1>Maxime Parisi </h1>
+            <h2>Il m'arrive de coder pour le Web.</h2>
+            <p>Je suis un jeune passioné, en alternance à Epitech. Je cherche qu'une chose : apprendre. </p>
+            <a class="button" href="projets.html">Projets</a>
+        </section>
+        <div class="sang">
+            <img src="img/sang.png" alt="sang">
+        </div>
+    </section>
+    <div id="movie" class="movie">
+        
+        <script>
+
+            let displayStickman = document.createElement("p");
+            let display = document.querySelector("#movie");
+            let duree = "lllllllll"
+
+            let stickman = "";
+                let moov1 = "  O  \n /|\\ \n /\\ \n";
+                let moov2 = "  O  \n /|\\ \n  /| \n";
+                let moov3 = "  O  \n /|\\ \n.  |\\ \n";
+                let moov4 = "\\O/ \n. | \n.  |\\ \n";
+
+                function display_stickman1(){
+                    stickman = moov1;
+                    displayStickman.innerText = stickman;
+                    display.appendChild(displayStickman);
+                }
+                function display_stickman2(){
+                    stickman = moov2;
+                    displayStickman.innerText = stickman;
+                    display.appendChild(displayStickman);
+                }
+                function display_stickman3(){
+                    stickman = moov3;
+                    displayStickman.innerText = stickman;
+                    display.appendChild(displayStickman);
+                }
+                   
+            setInterval(display_stickman1 , 500)
+            setInterval(display_stickman2 , 600) 
+            setInterval(display_stickman3 , 550)  
+
+            function redirection(){
+                document.location.href="projets.html";
+            }
+            setTimeout(redirection , 11000)
+            </script>
+    </div>
+</body>
+</html>
+

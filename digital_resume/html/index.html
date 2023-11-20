@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV of Parisi Maxime</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header >
+        <div class="hautDuHaut">
+            <img src="img/mp.png" alt="Mon logo"> 
+            <nav>
+                <a class="aNav" href="../main.html">Page d'introduction</a>
+                <a class="aNav" href="projets.html">Mes projets</a>
+            </nav>
+        </div>
+        <div class="header">
+            <img src="img/panda.png" alt="Photo de moi">
+            <div class="container">
+                <h1>
+                    <span><br>Maxime PARISI</span>
+                </h1>
+            </div>
+        </div>
+        <div class="container , header">
+            <h2>
+                <span>
+                    Recherche : poste de développeur Web.
+                </span>
+            </h2>
+        </div>
+    </header>
+    <main>
+        <section class="section1">
+            <div >
+                <br>
+                <div data-aos="fade-up-right">
+                    <h3><span><blockquote> Expérience professionnelle :</blockquote></span></h3>
+                    
+                </div>
+                <div data-aos="fade-up-left">
+                    <p><span>2021-2023 | Comptable Espace Conseil Expertise.</span></p>
+                </div>
+                <ul>
+                   <div data-aos="fade-up-right"><li>Etablissement des comptes clients <br>(bilans & déclarations) puis saisi de factures.</li></div>
+                    <div data-aos="fade-up-right"><li>Responsable d’un portefeuille de clients.</li></div>
+                </ul>
+            </div>
+            <div class="formation">
+                <br>
+                <div data-aos="fade-up-left" data-aos-offset= "200">
+                    <h3><span><blockquote>Formation scolaire :</blockquote></span></h3>
+                </div>
+                <div data-aos="fade-up-right" data-aos-offset= "200">
+                    <button id="button"><span>Diplômes</span></button>
+                </div>
+                <div id="display" class="display" data-aos="fade-up-left" data-aos-offset= "200">
+                   <a id="a" href="diplome.png"><img src="img/diplome.png" alt=""></a>
+                   <a id="a2" href="diplome.png"><img src="img/diplome.png" alt=""></a>
+                   <script>
+                    let button = document.getElementById("button");
+                    let div = document.getElementById("display");
+                    console.log(div.style.display)
+                    button.addEventListener("click", () => {
+                        if(getComputedStyle(div).display == "none"){
+                            div.style.display = "block" ;}
+                        else{
+                            div.style.display = "none";
+                        } 
+                    })
+                   </script>
+                </div>
+                <div data-aos="fade-up-right" data-aos-offset= "200">
+                <p><span>2023-2026 I Architecte <br> Logiciel Développeur <br>
+                    d’Applications <br>
+                    RNCP Niveau 7 I Epitech - Nice I <br> Contrat 
+                    d’apprentissage</span></p>
+                </div>
+                <div data-aos="fade-up-left" data-aos-offset= "200">
+                    <ul>
+                        <li><span>Apprentissage du language <br>Python, HTML, CSS</span></li>
+                    </ul>
+                </div>
+                <div data-aos="fade-up-left" data-aos-offset= "200">
+                    <p><span>2021-2023 I BTS Comptabilité et Gestion <br>
+                        (Mention Assez Bien) <br>
+                        Lycée Honoré d’Estienne d’Orves - Nice I <br>
+                        Contrat d’apprentissage</span></p>
+                </div> 
+                <ul>
+                    <div data-aos="fade-up-right" data-aos-offset= "200">
+                        <li><span>Déclaration CA3/CA12 (TVA), Impôts sur
+                            les société/revenu.</span></li>
+                        <li><span>Comptabilisé des Amortissements,
+                            Emprunts, Création de société, distribution
+                            des bénéfices.</span></li>
+                    </div>
+                    <div data-aos="fade-up-right" data-aos-offset= "200">
+                        <li><span>Calcul des coûts VAN, flux de trésorerie.</span></li>
+                        <li><span>Le monde de l’entreprise, les partis
+                            prenantes, étapes de création ,
+                            concurrence déloyale,<br> problèmes
+                            juridiques, forces de Porteur, finalités de
+                            l’entreprise.</span></li>
+                    </div>
+                </ul>
+            
+                
+            </div>
+            <div>
+                <br>
+                <div data-aos="fade-up-right" data-aos-offset= "200">
+                    <h3><span><blockquote> Projets personnels :</blockquote></span></h3>
+                </div>
+                <div data-aos="fade-up-right" data-aos-offset= "200">
+                <a href="projets.html"><span>Portfolio</span></a>
+                </div>
+                <div data-aos="fade-up-left" data-aos-offset= "200">
+                    <p class="titreProjet"><span>2023 I Association Fhun Boxe</span></p>
+                </div>
+                <div data-aos="fade-up-left" data-aos-offset= "200">
+                    <p><span>Création d’un site vitrine pour l’association
+                        sportive <br>
+                        Compétences : HTML, CSS, JavaScript</span></p>
+                </div>
+                <div data-aos="fade-up-right" data-aos-offset= "200">
+                    <p><span>Création de mini jeux (morpion, pierre feuille
+                        ciseaux, pendu, snake) <br>
+                        Compétences: PYTHON , TURTLE, Tkinter</span></p>
+                </div>
+                <div data-aos="fade-up-left" data-aos-offset= "200">
+                    <p class="titreProjet"><span>2022 I L’homme aveugle</span></p>
+                </div>
+                <div data-aos="fade-up-right" data-aos-offset= "200">
+                    <p><span>Création de mini jeux vidéo <br>
+                        Compétences : C</span></p>
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div>
+                <div data-aos="fade-up-left" data-aos-offset= "200">
+                    <h3 class="white"><span><blockquote>Contact :</blockquote></span></h3>
+                </div>
+                <div data-aos="fade-up-left" data-aos-offset= "200">
+                <ul>
+                    <li class="li2"><span>maxime.parisi@epitech.eu</span></li>
+                    <li class="li2"><span>06.52.31.73.20</span></li>
+                    <li class="li2"><span>14 Avenue Pierre Loti, 06000 Nice</span></li>
+                </ul>
+                </div>
+            </div>
+            <div>
+                <div data-aos="fade-up-right" data-aos-offset= "200">
+                    <h3 class="white"><span><blockquote>Compétences</blockquote></span></h3>
+                </div>
+                <div data-aos="fade-up-right" data-aos-offset= "200">
+                    <ul>
+                        <li class="li2" ><span>Programmation : HTML, CSS,
+                            JAVASCRIPT, JAVA.</span></li>
+                        <li class="li2" ><span>Logiciels comptables :
+                                QuadraOndemand ,NeoExpert,
+                                QuadraBox,</span></li>
+                        <li class="li2"><span>Comptabilité : enregistrement de
+                                factures, Révision, établissement
+                                Bilan/Compte de résultat.</span></li>
+                        <li class="li2"><span> Fiscalité : Déclaration TVA
+                                (CA3/CA12),</span></li>
+                        <li class="li2"><span>Gestion : Calcul des coûts</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-aos="fade-up-right" data-aos-offset= "200">
+                <h3 class="white"><blockquote>Langues :</blockquote></h3>
+                <ul>
+                    <li class="li2"><span>Francais (langue maternelle)</span></li>
+                    <li class="li2"><span>Anglais (niveau B2)</span></li>
+                    <li class="li2"> <span> Espagnol (niveau B1)</span></li>
+                </ul>
+            </div>
+            <div data-aos="fade-up-right" data-aos-offset= "200">
+                <h3 class="white"><blockquote> Hobbys :</blockquote></h3>
+                <ul>
+                    <li class="li2"><span>Sport : Fhun Boxe , Street Work Out</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="section1">
+            <div data-aos="fade-up-right" data-aos-offset= "150">
+                <a class="aNav" href="projets.html">Projets étudiés personnelement</a>
+            </div>
+            <div data-aos="fade-up-right" data-aos-offset= "150">
+               <br><br>
+               <a class="aNav" href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAD8rNnMBh1eq1tWZd9_7GEbOmac5bqMKNVc&keywords=maxime%20parisi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=6342bdc8-1f8e-4fc2-884a-bc4201385f13&sid=KiZ">Mon profil Linkedin</a>
+            </div>
+        </section>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+body{
+    font-family:"Raleway";
+    font-weight: 700;
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+nav{
+    padding: 3em 10em ;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+header{
+    background-image: url("../html/img/bg.png");
+    background-size: cover;
+}
+footer{
+    padding: 4em;
+    background-image: url("../html/img/bg.png");
+    background-size: cover;
+}
+.hautDuHaut{ 
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h1 , h2{
+    color : rgb(41,100,146);
+    max-height: 3em;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+}
+.section2{
+    color: white;
+    background: linear-gradient( rgb(32, 96, 146) , rgb(36, 70, 96));
+    border-radius: 20px;
+    width: 40%;
+}
+.competence{
+    padding-bottom: 1.5em;
+}
+.white{
+    font-weight: 900;
+    padding-right: 10em;
+    color: white;
+    border:1px rgb(67, 111, 145) solid;
+    border-radius: 20px;
+    box-shadow: 5px 5px 1px white;
+}
+div{
+    width: 30%;
+}
+h3{
+    font-size: 1.8em;
+    font-weight: 900;
+    color: black;
+    border:1px rgb(237, 236, 236) solid;
+    border-radius: 20px;
+    box-shadow: 5px 5px 1px black;
+    max-width: 50%;
+}
+a{
+    font-size: 1.4em;
+    color: rgb(41,100,146);
+    text-decoration: none;
+    margin: 1em;
+    padding:1em;
+    border: 1px grey solid;
+    border-radius: 10px;
+    box-shadow: 5px 4px 1px rgb(41,100,146);
+}
+a:hover{
+    position:relative;
+    top: 5px;
+    left: 4px;
+    box-shadow: none;
+
+}
+.asection2{
+    color : rgb(17, 41, 60);
+    margin: 10px;
+
+}
+.asection2:hover{
+    color: rgb(17, 41, 60);
+    position: relative;
+    top:1px;
+
+}
+p{
+    font-size: 1.4em;
+    padding: 10px;
+    margin: 10px;
+    border: 1px rgb(41,100,146) solid;
+    border-radius: 10px ;
+    font-size: 1,1em;
+    text-overflow: clip;
+    
+}
+li, .titreProjet{
+    font-size: 1.4em;
+    color: rgb(80,80,80);
+    padding: 5px;
+}
+.li2{
+    font-size: 1.5em;
+    color:white;
+    padding: 5px;
+    width: 100%;
+}
+textarea{
+    background-color: rgb(41,100,146);
+    color: white;
+    padding:10em 8em 10em 8em;
+    border-radius: 40px;  
+}
+img{
+    display: inline-block;
+}
+.img{
+    display: flex;
+    flex-direction: row;
+    margin-right:100%;
+    margin-right: 10%;
+    padding: 2em;
+    padding-right: 20em;
+    background-color: rgba(24,24,24,255);
+    border-radius: 30px;
+    justify-content: space-between;
+}
+.displayCode{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}
+
+@media screen and (max-width:1300px)  {
+    main{
+        flex-direction: column;
+    }
+    .section2{
+        padding: 20px;
+        width: 100%;
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        
+    }
+    .grid1{
+        grid-column: 1/1;
+        grid-row: 1/1
+
+    }
+    .grid2{
+        grid-column: 3/3;
+        grid-row: 1/1
+
+    }
+    .grid3{
+        grid-column: 1/1;
+        grid-row: 2/2
+
+    }
+    .grid4{
+        grid-column: 3/3;
+        grid-row: 2/2
+
+    }
+}
+h1 {
+    content: "";
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(-20%);
+}
+.white {
+    font-family: Raleway;
+    content: "";
+    display: block;
+    position: relative;
+    margin: 1em;
+    width: 50%;
+    height: 20%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(20%);
+} 
+
+h1  , h2 , .white {
+    animation: moovUp 0.6s ease-out forwards;
+}
+
+
+@keyframes moovLeft {
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moovUp {
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+
+
+
+
+
